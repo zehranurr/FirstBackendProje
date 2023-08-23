@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1>Ürün update sayfası </h1>
+{% block title %}
+<title>Update Claim  </title>
+{% endblock %}
+{% for urun_sonuc in data %}
+
+
+<form action="/admin/urunupdate?id={{ urun_sonuc[0] }}" method="post" >
+
+
+    <table class="table">
+    
+        <thead>
+            
+                <tr>
+                    <td><label> Ürün ID:</label</td>
+                    <td> <input type="text"   name="id" class = "input"  value="{{ urun_sonuc[0]}}"><br></td>
+                </tr><br><br>
+                <tr>
+                    <td><label> Ürün adı:</label</td>
+                    <td> <input type="text"   name="urun_ad" class = "input"  value="{{ urun_sonuc[1]}}"> ><br></td>
+                </tr><br><br>
+                <tr>
+                    <td><label> Ürün fiyatı:</label</td>
+                    <td> <input type="text"   name="urun_fiyat"  value="{{ urun_sonuc[2]}}"    ><br></td>
+                </tr>
+                <tr>
+                    <td><label> Ürün resim:</label</td>
+                    <td> <input type="text"   name="Urun_resim"    value="{{ urun_sonuc[8]}}" ><br></td>
+
+
+                </tr>
+                <tr>
+                    <td><label> Ürün Açıklama:</label</td>
+                    <td> <input type="text"   name="Urun_info"   value="{{ urun_sonuc[9] }}" ><br></td>
+
+
+
+
+                </tr>
+
+
+        </thead>
+    
+
+        {% endfor %}
+</table>
+<input type="submit" name="Güncelle" style="height:50px; width:100px;text-align: center">
+
+
+</form>
+
+
+{% endblock %}

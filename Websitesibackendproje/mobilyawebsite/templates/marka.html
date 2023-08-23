@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1> markalar</h1>
+
+<a href ="/admin/markaekle"> <button type ="button"  class= "btn btn-succesvalue"  >Marka ekle </button></a>
+<table class ="table table-bordered">
+    <thead>
+        <tr >
+            <td>Marka ID</td>
+    
+    
+    
+            <td>Marka  Resim </td>
+            <td> Marka Order</td>
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+    </thead>
+
+            {% for urun_sonuc in data %}
+            <tr>
+    
+                <td>{{ urun_sonuc[0] }}</td>
+                <td> <img  src = "{{ urun_sonuc[1] }}"  height="=200px" width="200px" card-img-top alt="..."/></td>
+                <td>{{  urun_sonuc[2] }}</td>
+                <td> - <a href="/admin/markagüncelle?id={{ urun_sonuc[0] }}"><img  src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnJSWrfbarwLX9W9SKusQjctcSWsgn7UxrUA&usqp=CAU"  height="=40px" width="40px"   alt="..."/></a></td>
+            <td><a href ="/admin/markasil?id={{ urun_sonuc[0] }}"><img  src = " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qDxtuWSQ_iXFhA9KZaOLwYP4WokxdLnOkA&usqp=CAU" height="=40px" width="40px"  alt="..."/></a></td>
+
+            
+        </tr>
+
+        {% endfor %}
+        </table>
+        
+        {% endblock %}
+        

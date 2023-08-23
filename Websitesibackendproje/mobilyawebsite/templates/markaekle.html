@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1>Marka ekleme sayfası </h1>
+
+<form action="/admin/markaekle" method="post" >
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td><label> Marka resim:</label</td>
+                <td> <input type="text"   name="marka_imaj" class = "input"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> marka sırası:</label</td>
+                <td> <input type="text"   name="order"><br></td>
+            </tr>
+        </thead>
+
+    
+
+
+    </table>
+    <input type="submit" name="ürün ekle" width="20px">
+    
+    
+    </form>
+    {% endblock %}

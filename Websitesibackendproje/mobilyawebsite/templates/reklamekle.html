@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1>Reklam ekleme sayfası </h1>
+
+<form action="/admin/reklamekle" method="post" >
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td><label> Reklam resim:</label</td>
+                <td> <input type="text"   name="resim" class = "input"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> Reklam  Başlık:</label</td>
+                <td> <input type="text"   name="title"><br></td>
+            </tr>
+            <tr>
+                <td><label> Reklam  Açıklama :</label</td>
+                <td> <input type="text"   name="Aciklama"><br></td>
+            </tr>
+        </thead>
+
+    
+
+
+    </table>
+    <input type="submit" name="Reklam ekle" width="20px">
+    
+    
+    </form>
+    {% endblock %}

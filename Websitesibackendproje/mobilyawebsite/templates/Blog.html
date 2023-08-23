@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1> Blog</h1>
+
+
+
+<a href ="/admin/blogekle"> <button type ="button"  class= "btn btn-succesvalue"  >Blog  ekle </button></a>
+<table class ="table table-bordered">
+    <thead>
+        <tr >
+            <td>Blog  ID</td>
+    
+    
+    
+            <td>Blog  Başlık</td>
+            <td> Blog Kısa Başlık</td>
+            <td> Blog Yazar </td>
+            <td> Blog Yayın Tarihi</td>
+            <td> Blog Uzun Başlık </td>
+
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+    </thead>
+
+
+    {% for urun_sonuc in data %}
+
+    <tr>
+
+        <td>{{ urun_sonuc[0] }}</td>
+        <td>{{ urun_sonuc[1] }}</td>
+        <td>{{ urun_sonuc[3] }}</td>
+        <td>{{ urun_sonuc[4] }}</td>
+        <td>{{ urun_sonuc[5] }}</td>
+        <td>{{ urun_sonuc[6] }}</td>
+
+        <td> <img  src = "{{ urun_sonuc[2] }}"  height="=200px" width="200px" card-img-top alt="..."/></td>
+
+
+
+        <td> - <a href="/admin/bloggüncelle?id={{ urun_sonuc[0] }}"><img  src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnJSWrfbarwLX9W9SKusQjctcSWsgn7UxrUA&usqp=CAU"  height="=40px" width="40px"   alt="..."/></a></td>
+        <td><a href ="/admin/blogsil?id={{ urun_sonuc[0] }}"><img  src = " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qDxtuWSQ_iXFhA9KZaOLwYP4WokxdLnOkA&usqp=CAU" height="=40px" width="40px"  alt="..."/></a></td>
+
+        
+    </tr>
+
+    {% endfor %}
+    </table>
+    
+    {% endblock %}
+    

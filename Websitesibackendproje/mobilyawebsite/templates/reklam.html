@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1> Reklamlar</h1>
+
+
+<a href ="/admin/reklamekle"> <button type ="button"  class= "btn btn-succesvalue"  >Reklam  ekle </button></a>
+<table class ="table table-bordered">
+    <thead>
+        <tr >
+            <td>Reklam ID</td>
+    
+    
+    
+            <td>Reklam Başlık </td>
+            <td> Reklam Açıklama</td>
+            <td> Reklam Resim</td>
+
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+    </thead>
+        
+            {% for urun_sonuc in data %}
+
+            <tr>
+    
+                <td>{{ urun_sonuc[0] }}</td>
+                <td>{{ urun_sonuc[1] }}</td>
+                <td>{{ urun_sonuc[2] }}</td>
+
+                <td> <img  src = "{{ urun_sonuc[3] }}"  height="=200px" width="200px" card-img-top alt="..."/></td>
+
+
+
+                <td> - <a href="/admin/reklamgüncelle?id={{ urun_sonuc[0] }}"><img  src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnJSWrfbarwLX9W9SKusQjctcSWsgn7UxrUA&usqp=CAU"  height="=40px" width="40px"   alt="..."/></a></td>
+                <td><a href ="/admin/reklamsil?id={{ urun_sonuc[0] }}"><img  src = " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qDxtuWSQ_iXFhA9KZaOLwYP4WokxdLnOkA&usqp=CAU" height="=40px" width="40px"  alt="..."/></a></td>
+    
+                
+            </tr>
+    
+            {% endfor %}
+            </table>
+            
+            {% endblock %}
+            

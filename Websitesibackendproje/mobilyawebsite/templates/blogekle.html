@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1>Blog ekleme sayfası </h1>
+
+<form action="/admin/blogekle" method="post" >
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td><label> Blog  resim:</label</td>
+                <td> <input type="text"   name="resim" class = "input"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> Blog Kısa Başlık:</label</td>
+                <td> <input type="text"   name="kisa_baslik"><br></td>
+            </tr>
+            <tr>
+                <td><label> Reklam  Başlık :</label</td>
+                <td> <input type="text"   name="title"><br></td>
+            </tr>
+            <tr>
+                <td><label> Reklam  ilan tarihi:</label</td>
+                <td> <input type="date"   name="publish_date"><br></td>
+            </tr>
+            <tr>
+                <td><label> Reklam  Uzun Başlık:</label</td>
+                <td> <input type="text"   name="uzun_baslik"><br></td>
+            </tr>
+            <tr>
+                <td><label> Reklam  Yazar :</label</td>
+                <td> <input type="text"   name="yazar"><br></td>
+            </tr>
+        </thead>
+
+    
+
+
+    </table>
+    <input type="submit" name="Blog ekle" width="20px">
+    
+    
+    </form>
+    {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+
+
+<h1>Reklam update sayfası </h1>
+{% block title %}
+<title>Update Claim  </title>
+{% endblock %}
+{% for urun_sonuc in data %}
+
+<form action="/admin/reklamgüncelle?id={{ urun_sonuc[0] }}" method="post" >
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td><label> Reklam Başlık :</label</td>
+                <td> <input type="text"   name="title" class = "input" value="{{ urun_sonuc[1] }}"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> Reklam Açıklama :</label</td>
+                <td> <input type="text"   name="Aciklama" class = "input" value="{{ urun_sonuc[2] }}"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> Reklam  resim:</label</td>
+                <td> <input type="text"   name="resim" class = "input" value="{{ urun_sonuc[3] }}"><br></td>
+            </tr><br><br>
+            
+        </thead>
+        {% endfor %}
+
+    
+
+
+    </table>
+    <input type="submit" name="Reklam ekle" width="20px">
+    
+    
+    </form>
+    {% endblock %}

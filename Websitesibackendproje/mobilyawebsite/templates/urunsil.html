@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<h1>Ürün silme sayfası </h1>
+
+
+
+<form action="/admin/urunsil" method="post" >
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <td><label> Ürün adı:</label</td>
+                <td> <input type="text"   name="urun_ad" class = "input"><br></td>
+            </tr><br><br>
+            <tr>
+                <td><label> Ürün fiyatı:</label</td>
+                <td> <input type="text"   name="urun_fiyat"><br></td>
+            </tr>
+            <tr>
+                <td><label> Ürün resim:</label</td>
+                <td> <input type="text"   name="Urun_resim"><br></td>
+
+
+            </tr>
+            <tr>
+                <td><label> Ürün Açıklama:</label</td>
+                <td> <input type="text"   name="Urun_info"><br></td>
+
+
+            </tr>
+
+
+        </thead>
+
+    
+
+
+</table>
+<input type="submit" name="ürün ekle" width="20px">Ürün ekle
+
+
+</form>
+
+
+{% endblock %}
